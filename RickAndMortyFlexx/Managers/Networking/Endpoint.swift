@@ -45,4 +45,36 @@ extension RickAndMortyEndpoint {
     return url + "?page="
   }
   
+  static func buildCharacterFilter(name: String = "",
+                                   status: CharacterStatus = .none,
+                                   species: String = "",
+                                   type: String = "",
+                                   gender: CharacterGender = .none) -> [String: String] {
+    
+    return [
+      "name" : name,
+      "status": status.rawValue,
+      "species": species,
+      "type": type,
+      "gender" : gender.rawValue
+    ]
+  }
+  
+  static func builLocationFilter(name: String = "",
+                                 type: String = "",
+                                 dimension: String = "") -> [String: String] {
+    return [
+      "name": name,
+      "type": type,
+      "dimension": dimension
+    ]
+  }
+  
+  static func buildEpisodeFilter(name: String = "",
+                                 episode: String = "")-> [String: String] {
+    return [
+      "name": name,
+      "episode": episode
+    ]
+  }
 }

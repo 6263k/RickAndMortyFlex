@@ -44,7 +44,7 @@ enum CharacterStatus: String {
   case none = ""
 }
 
-enum Gender: String {
+enum CharacterGender: String {
   case female = "female"
   case male = "male"
   case genderless = "genderless"
