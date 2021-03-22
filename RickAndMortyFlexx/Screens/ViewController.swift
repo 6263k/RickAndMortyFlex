@@ -6,23 +6,26 @@
 //
 
 import UIKit
+import RxSwift
+
 
 class ViewController: UIViewController {
-  let apiSerivce = APIService()
-  
+  let apiManager = APIManager()
+  let disposeBag = DisposeBag()
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    apiSerivce.getAllCharacters { (result) in
-      switch result {
-      case .success(let characters):
-        characters.forEach { print($0.id) }
-        print("done")
-      case .failure(let error):
-        print(error)
-      }
+    apiManager.request(CharacterTarget.character(page: 1 ))
+      .mapDecodable(from: CharacterInfoModel.self)
+      .subscribe(onSuccess: { result in
+        switch result {
+        case .success(let info):
+          info.results.forEach { print($0.id) }
+        case .failure(let error):
+          print(error.localizedDescription)
+        }
+      })
+      .disposed(by: disposeBag)
       
-    }
   }
 
 }
