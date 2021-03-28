@@ -8,7 +8,7 @@
 import Moya
 
 enum CharacterTarget {
-  case character(page: Int, name: String = "", status: CharacterStatus = .none, species: String = "", type: CharacterGender = .none)
+  case character(page: Int, name: String = "", status: CharacterModel.CharacterStatus = .none, species: String = "", type: CharacterModel.CharacterGender = .none)
   case charactersWith(ids: [Int])
   case charaterWith(id: Int)
 }
@@ -26,14 +26,12 @@ extension CharacterTarget: TargetType {
       return "/character/" + String(id)
     case .charactersWith(let ids):
       return "/character/" + ids.toStringWith(separator: ",")
-    @unknown default:
-      return ""
     }
   }
   
   var method: Method {
     switch self {
-    default:
+    case .character, .charactersWith, .charaterWith:
       return .get
     }
   }
@@ -51,7 +49,7 @@ extension CharacterTarget: TargetType {
       params["status"] = status.rawValue
       params["species"] = species
       params["type"] = type.rawValue
-    default:
+    case .charaterWith, .charactersWith:
       break
     }
     return params
@@ -59,12 +57,14 @@ extension CharacterTarget: TargetType {
   
   var task: Task {
     switch self {
-    default:
+    case .character, .charaterWith, .charactersWith:
       if let parameters = parameters {
         return .requestParameters(parameters: parameters, encoding: defaultParameterEncoding )
       }
       return .requestPlain
     }
+    
+    
   }
   
   var headers: [String : String]? {

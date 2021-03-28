@@ -6,4 +6,6 @@ target 'RickAndMortyFlexx' do
   pod 'Moya', '14.0'
   pod 'RxSwift', '6.1.0'
   pod 'RxCocoa', '6.1.0'
+  pod 'RealmSwift', '10.7'
+  pod 'RxRealm'
 end

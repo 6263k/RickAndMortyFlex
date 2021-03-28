@@ -8,7 +8,7 @@
 import Moya
 import RxSwift
 
-class APIManager {
+final class APIManager {
   let provider: MultiMoyaProvider
   let session: Session
   

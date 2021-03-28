@@ -27,14 +27,12 @@ extension LocationTarget: TargetType {
       return "/location/" + String(id)
     case .locationsWith(let ids):
       return "/location/" + ids.toStringWith(separator: ",")
-    @unknown default:
-      return ""
     }
   }
   
   var method: Method {
     switch self {
-    default:
+    case .location, .locationWith, .locationsWith:
       return .get
     }
   }
@@ -45,7 +43,7 @@ extension LocationTarget: TargetType {
     case let .location(page, name):
       params["page"] = page
       params["name"] = name
-    default:
+    case .locationWith, .locationsWith:
       break
     }
     return params
@@ -57,7 +55,7 @@ extension LocationTarget: TargetType {
   
   var task: Task {
     switch self {
-    default:
+    case .location, .locationWith, .locationsWith:
       if let parameters = parameters {
         return .requestParameters(parameters: parameters, encoding: defaultParameterEncoding)
       }

@@ -28,14 +28,12 @@ extension EpisodeTarget: TargetType {
       return "/episode/" + String(id)
     case .episodesWith(let ids):
       return "/episode/" + ids.toStringWith(separator: ",")
-    @unknown default:
-      return ""
     }
   }
   
   var method: Method {
     switch self {
-    default:
+    case .episode, .episodeWith, .episodesWith:
       return .get
     }
   }
@@ -46,7 +44,7 @@ extension EpisodeTarget: TargetType {
     case let .episode(page, name):
       params["page"] = page
       params["name"] = name
-    default:
+    case .episodeWith, .episodesWith:
       break
     }
     return params
@@ -58,7 +56,7 @@ extension EpisodeTarget: TargetType {
   
   var task: Task {
     switch self {
-    default:
+    case .episode, .episodeWith, .episodesWith:
       if let parameters = parameters {
         return .requestParameters(parameters: parameters, encoding: defaultParameterEncoding)
       }
