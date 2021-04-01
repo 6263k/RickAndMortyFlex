@@ -12,19 +12,15 @@ final class CharacterCoordinator: Coordinatable {
     case character
   }
   private let dependecies: AppDependecies
-  private let parentNavigationController: UINavigationController
   
   let navigationController: UINavigationController = {
     let navigationController = UINavigationController()
-    navigationController.modalTransitionStyle = .crossDissolve
-    navigationController.modalPresentationStyle = .fullScreen
     navigationController.tabBarItem.title = "HUY"
     navigationController.view.backgroundColor = .black
     return navigationController
   }()
   
-  init (_ navigationController: UINavigationController, dependecies: AppDependecies) {
-    self.parentNavigationController = navigationController
+  init (dependecies: AppDependecies) {
     self.dependecies = dependecies
     
   }
@@ -43,7 +39,7 @@ final class CharacterCoordinator: Coordinatable {
   private func routeToCharacterViewController(from vc: UIViewController, with transition: Transition) {
     let characterViewModel = CharacterViewModel()
     guard let characterViewController = CharacterViewController.createWithStoryboard(Storyboard.main, with: characterViewModel) else { return }
-    transition.open(characterViewController, from: vc, completion: nil)
+		transition.open(characterViewController, from: vc, completion: nil)
   }
 
   

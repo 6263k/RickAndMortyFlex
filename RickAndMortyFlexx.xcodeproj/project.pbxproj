@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6B0EBBC55616529DE980971C /* Pods_RickAndMortyFlexx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD834D495ED72AE18CE8ACA /* Pods_RickAndMortyFlexx.framework */; };
 		A56AA74C26013B9A0070A8AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AA74B26013B9A0070A8AF /* AppDelegate.swift */; };
-		A56AA74E26013B9A0070A8AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AA74D26013B9A0070A8AF /* SceneDelegate.swift */; };
 		A56AA75026013B9A0070A8AF /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AA74F26013B9A0070A8AF /* CharacterViewController.swift */; };
 		A56AA75326013B9A0070A8AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56AA75126013B9A0070A8AF /* Main.storyboard */; };
 		A56AA75526013B9B0070A8AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A56AA75426013B9B0070A8AF /* Assets.xcassets */; };
@@ -57,7 +56,6 @@
 		A31CC433F3FAD2B4F826649D /* Pods-RickAndMortyFlexx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMortyFlexx.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMortyFlexx/Pods-RickAndMortyFlexx.debug.xcconfig"; sourceTree = "<group>"; };
 		A56AA74826013B9A0070A8AF /* RickAndMortyFlexx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyFlexx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A56AA74B26013B9A0070A8AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A56AA74D26013B9A0070A8AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A56AA74F26013B9A0070A8AF /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		A56AA75226013B9A0070A8AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A56AA75426013B9B0070A8AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				A56AA74B26013B9A0070A8AF /* AppDelegate.swift */,
-				A56AA74D26013B9A0070A8AF /* SceneDelegate.swift */,
 				A56AA8272610C28E0070A8AF /* AppAssembly.swift */,
 				A56AA8342610C40E0070A8AF /* AppDependecies.swift */,
 				A56AA8492612113F0070A8AF /* AppCoordinator.swift */,
@@ -332,8 +329,8 @@
 		A56AA85A261213F70070A8AF /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				A56AA8842614BD600070A8AF /* CharacterFlow */,
 				A56AA75126013B9A0070A8AF /* Main.storyboard */,
+				A56AA8842614BD600070A8AF /* CharacterFlow */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -525,7 +522,6 @@
 				A56AA7B62606296D0070A8AF /* EpisodeTarget.swift in Sources */,
 				A56AA8282610C28E0070A8AF /* AppAssembly.swift in Sources */,
 				A56AA74C26013B9A0070A8AF /* AppDelegate.swift in Sources */,
-				A56AA74E26013B9A0070A8AF /* SceneDelegate.swift in Sources */,
 				A56AA805260E1C430070A8AF /* DBManager.swift in Sources */,
 				A56AA8422610C56D0070A8AF /* HasRMService.swift in Sources */,
 				A56AA85C261214540070A8AF /* Coordinator.swift in Sources */,

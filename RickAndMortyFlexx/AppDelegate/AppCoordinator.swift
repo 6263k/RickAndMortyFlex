@@ -15,6 +15,7 @@ final class AppCoordinator {
     let navigationController = UINavigationController()
     navigationController.navigationBar.isHidden = true
     navigationController.modalPresentationStyle = .fullScreen
+		navigationController.modalTransitionStyle = .crossDissolve
     navigationController.view.backgroundColor = .red
     return navigationController
   }()
@@ -27,12 +28,13 @@ final class AppCoordinator {
   }
   
   func start() {
-    window?.rootViewController = rootNavigationController
-    window?.makeKeyAndVisible()
-    
-    let tabBarCoordinator = BaseTabBarCoordinator(with: rootNavigationController, dependecies)
-    tabBarCoordinator.start()
-    childCoorinators.append(tabBarCoordinator)
+		window?.rootViewController = rootNavigationController
+		window?.makeKeyAndVisible()
+
+
+		let tabBarCoordinator = BaseTabBarCoordinator(with: rootNavigationController, dependecies)
+		tabBarCoordinator.start()
+		childCoorinators.append(tabBarCoordinator)
   }
   
 }

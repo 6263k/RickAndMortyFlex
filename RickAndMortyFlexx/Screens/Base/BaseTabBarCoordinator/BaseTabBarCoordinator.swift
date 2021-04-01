@@ -10,19 +10,10 @@ import RxSwift
 final class BaseTabBarCoordinator: Coordinator {
   enum Route {
   }
-  let navigationController: UINavigationController = {
-    let navigationViewController = UINavigationController()
-    navigationViewController.modalPresentationStyle = .fullScreen
-    navigationViewController.modalTransitionStyle = .crossDissolve
-    navigationViewController.navigationBar.isHidden = true
-    navigationViewController.view.backgroundColor = .magenta
-    return navigationViewController
-  }()
-  
-  lazy var tabBarController: UITabBarController = {
+
+	let tabBarController: UITabBarController = {
     let tabBarController = UITabBarController()
     tabBarController.modalPresentationStyle = .fullScreen
-    tabBarController.modalTransitionStyle = .crossDissolve
     tabBarController.view.backgroundColor = .blue
     return tabBarController
   }()
@@ -37,16 +28,15 @@ final class BaseTabBarCoordinator: Coordinator {
   
   
   func start() {
-    parentNavigationController.showAsync(navigationController, sender: nil)
-    let characterCoordinator = CharacterCoordinator(navigationController, dependecies: dependecies)
-    characterCoordinator.start()
-    let character2Coordinator = CharacterCoordinator(navigationController, dependecies: dependecies)
-    tabBarController.setViewControllers([characterCoordinator.navigationController, character2Coordinator.navigationController], animated: false)
-    
-    navigationController.setViewControllers([tabBarController], animated: false)
+		
+		let characterCoordinator = CharacterCoordinator(dependecies: dependecies)
+		characterCoordinator.start()
+		
+		tabBarController.setViewControllers([characterCoordinator.navigationController], animated: false)
+		
+		parentNavigationController.pushViewController(tabBarController, animated: false)
   }
-  
-  
+
   func route(to route: Route, with transition: Transition) {
     
   }

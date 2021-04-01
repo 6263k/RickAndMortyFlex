@@ -7,8 +7,6 @@
 
 import UIKit
 
-protocol Coordinatable {
-  var navigationController: UINavigationController { get }
-  
+protocol Coordinatable {  
   func start()
 }
