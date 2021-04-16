@@ -29,6 +29,11 @@ xcuserdata/
 *.dSYM.zip
 *.dSYM
 
+## OS-specific files
+.DS_Store
+.Thrashes
+Thubs.db
+
 ## Playgrounds
 timeline.xctimeline
 
