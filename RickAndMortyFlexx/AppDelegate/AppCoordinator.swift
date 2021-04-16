@@ -16,7 +16,6 @@ final class AppCoordinator {
     navigationController.navigationBar.isHidden = true
     navigationController.modalPresentationStyle = .fullScreen
 		navigationController.modalTransitionStyle = .crossDissolve
-    navigationController.view.backgroundColor = .red
     return navigationController
   }()
   private var childCoorinators = [Coordinatable]()

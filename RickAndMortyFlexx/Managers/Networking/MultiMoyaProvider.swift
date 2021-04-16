@@ -6,11 +6,11 @@
 //
 import Moya
 import RxSwift
-
+import Alamofire
 
 class MultiMoyaProvider: MoyaProvider<MultiTarget> {
   typealias Target = MultiTarget
-  
+  let disposeBag = DisposeBag()
   override init(endpointClosure: @escaping EndpointClosure = MoyaProvider.defaultEndpointMapping,
                 requestClosure: @escaping RequestClosure = MoyaProvider<Target>.defaultRequestMapping,
                 stubClosure: @escaping StubClosure = MoyaProvider.neverStub,
@@ -25,7 +25,19 @@ class MultiMoyaProvider: MoyaProvider<MultiTarget> {
 
 extension MultiMoyaProvider {
   func request(_ target: Target) -> Single<Result<Data, APIError>> {
+    var error: APIError?
+    NetworkReachabilityManager.rx.reachable.subscribe(onNext: { status in
+      if !status {
+        error = .networkNotAvailable
+      }
+    }).disposed(by: disposeBag)
+    
     return Single.create { [weak self] observer in
+      if let error = error {
+        observer(.success(.failure(error)))
+        return Disposables.create()
+      }
+      
       let task = self?.request(target, progress: nil) { result in
         switch result {
         case .success(let response):
@@ -34,11 +46,10 @@ extension MultiMoyaProvider {
           observer(.success(.failure(.requestFailed)))
         }
       }
-      
       return Disposables.create {
         task?.cancel()
       }
     }
-    
   }
+  
 }

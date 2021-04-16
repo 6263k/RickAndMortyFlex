@@ -8,6 +8,8 @@
 import RxSwift
 
 class BaseViewController<ViewModel: BaseViewModel>: UIViewController {
+	enum Section: Hashable {}
+	
   var viewModel: ViewModel!
   
   override func viewDidLoad() {

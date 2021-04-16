@@ -59,7 +59,7 @@ extension CharacterTarget: TargetType {
     switch self {
     case .character, .charaterWith, .charactersWith:
       if let parameters = parameters {
-        return .requestParameters(parameters: parameters, encoding: defaultParameterEncoding )
+				return .requestParameters(parameters: parameters, encoding: URLEncoding.default )
       }
       return .requestPlain
     }

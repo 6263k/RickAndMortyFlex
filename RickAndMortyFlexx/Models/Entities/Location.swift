@@ -10,7 +10,7 @@ import RealmSwift
 
 class LocationModel: Object, IDInitable, Decodable {
   @objc dynamic var id: Int = Int.max
-  @objc dynamic var name: String = "Unknown"
+  @objc dynamic var name: String = "Unknown ¯\\_(ツ)_/¯"
   @objc dynamic var type: String = ""
   @objc dynamic var dimension: String = ""
   let characters = List<CharacterModel>()
@@ -40,7 +40,6 @@ class LocationModel: Object, IDInitable, Decodable {
   
   required init(id: Int) {
     self.id = id
-    self.name = ""
     super.init()
   }
   

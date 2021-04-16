@@ -13,6 +13,7 @@ enum APIError: Error {
   case requestFailed
   case jsonConversationFailed
   case moyaError
+  case networkNotAvailable
   
   static func from(_ error: MoyaError) -> APIError {
     switch error {
@@ -33,8 +34,10 @@ extension APIError {
       return "Не удалось переобразовать JSON в объект"
     case .requestFailed:
       return "Не удалось отправить запрос"
+    case .networkNotAvailable:
+      return "Соединение с интернетом не доступно"
     case .moyaError:
-      return "Какая-то моя ошибка, я не распарсил их ¯\\_(ツ)_/¯" 
+      return "Какая-то моя ошибка, я не распарсил их ¯\\_(ツ)_/¯"
     }
   }
 }

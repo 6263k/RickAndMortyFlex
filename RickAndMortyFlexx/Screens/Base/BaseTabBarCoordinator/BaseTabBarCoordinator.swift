@@ -14,7 +14,10 @@ final class BaseTabBarCoordinator: Coordinator {
 	let tabBarController: UITabBarController = {
     let tabBarController = UITabBarController()
     tabBarController.modalPresentationStyle = .fullScreen
-    tabBarController.view.backgroundColor = .blue
+		tabBarController.tabBar.isTranslucent = false
+		tabBarController.view.backgroundColor = .rmCyan
+		tabBarController.tabBar.tintColor = .rmCyan
+		tabBarController.tabBar.barTintColor = .rmDarkBlue
     return tabBarController
   }()
   
@@ -31,9 +34,8 @@ final class BaseTabBarCoordinator: Coordinator {
 		
 		let characterCoordinator = CharacterCoordinator(dependecies: dependecies)
 		characterCoordinator.start()
-		
 		tabBarController.setViewControllers([characterCoordinator.navigationController], animated: false)
-		
+    
 		parentNavigationController.pushViewController(tabBarController, animated: false)
   }
 

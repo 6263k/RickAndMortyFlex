@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="3aO-xA-LNf" customClass="ErrorView" customModule="RickAndMortyFlexx" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="321" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label with error text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49d-s2-D7P">
+                    <rect key="frame" x="4" y="9" width="152" height="102"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="500" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="trailing" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJd-9Q-NL3">
+                    <rect key="frame" x="241" y="0.0" width="80" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="lub-Ut-QzC"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemPinkColor"/>
+                    <state key="normal" backgroundImage="errorImage">
+                        <color key="titleShadowColor" systemColor="labelColor"/>
+                        <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                    </state>
+                    <connections>
+                        <action selector="closePressed:" destination="3aO-xA-LNf" eventType="touchUpInside" id="mH2-Yq-lRc"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemRedColor"/>
+            <constraints>
+                <constraint firstItem="49d-s2-D7P" firstAttribute="leading" secondItem="3aO-xA-LNf" secondAttribute="leading" constant="4" id="6xD-tx-AoR"/>
+                <constraint firstItem="YJd-9Q-NL3" firstAttribute="top" secondItem="3aO-xA-LNf" secondAttribute="top" id="8VV-np-qEH"/>
+                <constraint firstAttribute="bottom" secondItem="49d-s2-D7P" secondAttribute="bottom" constant="9" id="8lm-a9-D7s"/>
+                <constraint firstItem="YJd-9Q-NL3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="49d-s2-D7P" secondAttribute="trailing" constant="9" id="IF1-wN-aAh"/>
+                <constraint firstAttribute="bottom" secondItem="YJd-9Q-NL3" secondAttribute="bottom" id="P8G-M3-bfv"/>
+                <constraint firstItem="49d-s2-D7P" firstAttribute="centerY" secondItem="3aO-xA-LNf" secondAttribute="centerY" id="XiZ-5P-4sE"/>
+                <constraint firstAttribute="trailing" secondItem="YJd-9Q-NL3" secondAttribute="trailing" id="kay-gi-k1O"/>
+                <constraint firstItem="49d-s2-D7P" firstAttribute="top" secondItem="3aO-xA-LNf" secondAttribute="top" constant="9" id="vAs-Hn-eCc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="closeButton" destination="YJd-9Q-NL3" id="4sx-NI-8lu"/>
+                <outlet property="textLabel" destination="49d-s2-D7P" id="IaB-9g-kUf"/>
+            </connections>
+            <point key="canvasLocation" x="-42.753623188405797" y="79.6875"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="errorImage" width="128" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

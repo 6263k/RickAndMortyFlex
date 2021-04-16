@@ -10,6 +10,7 @@ import Realm
 import RealmSwift
 
 
+
 class CharacterModel: Object, IDInitable, Decodable {
   @objc dynamic var id: Int = Int.max
   @objc dynamic var name: String = ""

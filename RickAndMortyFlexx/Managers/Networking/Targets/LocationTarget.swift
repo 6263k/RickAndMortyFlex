@@ -57,7 +57,7 @@ extension LocationTarget: TargetType {
     switch self {
     case .location, .locationWith, .locationsWith:
       if let parameters = parameters {
-        return .requestParameters(parameters: parameters, encoding: defaultParameterEncoding)
+				return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
       }
       return .requestPlain
     }

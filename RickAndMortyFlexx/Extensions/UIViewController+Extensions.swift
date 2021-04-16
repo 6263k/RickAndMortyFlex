@@ -14,10 +14,17 @@ extension UIViewController {
 }
 
 
-extension UINavigationController {
-  public func showAsync(_ vc: UIViewController, sender: Any?) {
-    DispatchQueue.main.async {
-      self.show(vc, sender: sender)
-    }
-  }
+extension UIScrollView {
+	func isNearBottomEdge(edgeOffset: CGFloat = 20.0) -> Bool {
+		self.contentOffset.y + self.frame.size.height + edgeOffset > self.contentSize.height
+	}
+}
+
+extension UINavigationItem {
+	func setCustomTitle(text: String) {
+		let titleLabel = UILabel()
+		titleLabel.attributedText = text.toStrokeText()
+		titleLabel.sizeToFit()
+		self.titleView = titleLabel
+	}
 }

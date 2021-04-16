@@ -24,3 +24,27 @@ extension Array where Element: Equatable {
         return uniqueValues
     }
 }
+
+
+extension Int {
+	func mapPageToIDs() -> [Int] {
+		return Array(
+			(self - 1) * 20 + 1 ... self * 20
+		)
+		
+	}
+}
+
+extension Array where Element == APIError? {
+	var error: APIError? {
+		return compactMap { $0 }.first
+	}
+}
+
+extension Result {
+	var error: APIError? {
+		guard case .failure(let error) = self else { return nil}
+		return error as? APIError
+	}
+	
+}

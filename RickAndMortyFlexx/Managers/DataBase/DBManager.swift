@@ -144,7 +144,10 @@ final class DBManager {
     return getObjectsWithIDs(ofType: objectType, IDs: [ID])
   }
   
-  
+	func filterObjects<T: Object>(ofType type: T.Type, query: String) -> Observable<Results<T>> {
+		let objects = realm.objects(type).filter("name CONTAINS %d", query)
+		return Observable.collection(from: objects)
+	}
 }
 
 //MARK: - Private
@@ -159,7 +162,7 @@ extension DBManager {
     }
     
     realm.safeWrite {
-      realm.add(objectsToAdd)
+			realm.add(objectsToAdd, update: .modified)
     }
   }
 
@@ -174,9 +177,11 @@ extension DBManager {
     }
     
     realm.safeWrite {
-      realm.add(objectsToAdd)
+			realm.add(objectsToAdd, update: .modified)
     }
   }
+	
+
 }
 
 

@@ -58,7 +58,7 @@ extension EpisodeTarget: TargetType {
     switch self {
     case .episode, .episodeWith, .episodesWith:
       if let parameters = parameters {
-        return .requestParameters(parameters: parameters, encoding: defaultParameterEncoding)
+				return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
       }
       return .requestPlain
     }

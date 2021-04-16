@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="rm_font.ttf">
+            <string>GetSchwifty-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CharacterCell" customModule="RickAndMortyFlexx" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="271" height="232"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="271" height="232"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YmY-YD-Rat">
+                        <rect key="frame" x="0.0" y="0.0" width="271" height="232"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ek0-aj-ZmS">
+                        <rect key="frame" x="0.0" y="182" width="271" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="900" text="Name de Surname Reaaaly long name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPr-rI-23c">
+                                <rect key="frame" x="8" y="4" width="255" height="42"/>
+                                <fontDescription key="fontDescription" name="GetSchwifty-Regular" family="Get Schwifty" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
+                        </subviews>
+                        <color key="tintColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstItem="mPr-rI-23c" firstAttribute="centerY" secondItem="ek0-aj-ZmS" secondAttribute="centerY" id="9zu-4G-IUk"/>
+                            <constraint firstAttribute="height" constant="50" id="SWu-bn-rmt"/>
+                            <constraint firstItem="mPr-rI-23c" firstAttribute="centerX" secondItem="ek0-aj-ZmS" secondAttribute="centerX" id="U9N-1I-Iik"/>
+                            <constraint firstItem="mPr-rI-23c" firstAttribute="width" secondItem="ek0-aj-ZmS" secondAttribute="width" multiplier="0.940959" id="dLK-CH-4M8"/>
+                            <constraint firstItem="mPr-rI-23c" firstAttribute="height" secondItem="ek0-aj-ZmS" secondAttribute="height" multiplier="0.84" id="hY9-KH-eDy"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="YmY-YD-Rat" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2Yn-79-Ym7"/>
+                <constraint firstItem="ek0-aj-ZmS" firstAttribute="centerX" secondItem="YmY-YD-Rat" secondAttribute="centerX" id="9h2-zl-tFL"/>
+                <constraint firstAttribute="bottom" secondItem="YmY-YD-Rat" secondAttribute="bottom" id="CCG-Hn-175"/>
+                <constraint firstAttribute="trailing" secondItem="YmY-YD-Rat" secondAttribute="trailing" id="HnR-Mg-GLw"/>
+                <constraint firstItem="ek0-aj-ZmS" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="e8R-pe-Huf"/>
+                <constraint firstItem="YmY-YD-Rat" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="olr-f3-68a"/>
+                <constraint firstAttribute="bottom" secondItem="ek0-aj-ZmS" secondAttribute="bottom" id="pF9-TI-3m2"/>
+            </constraints>
+            <size key="customSize" width="271" height="232"/>
+            <connections>
+                <outlet property="characterImage" destination="YmY-YD-Rat" id="BC8-5U-u6b"/>
+                <outlet property="characterName" destination="mPr-rI-23c" id="RZ0-sA-cIx"/>
+                <outlet property="opacityView" destination="ek0-aj-ZmS" id="Ktb-LI-vCg"/>
+            </connections>
+            <point key="canvasLocation" x="94.927536231884062" y="106.47321428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

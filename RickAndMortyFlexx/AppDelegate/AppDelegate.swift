@@ -18,10 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let dependecies = AppAssembly.assembly()
     appCoordinator = AppCoordinator(with: window, dependecies: dependecies)
     appCoordinator?.start()
+		
     return true
   }
 
-
-
 }
+
+
 
