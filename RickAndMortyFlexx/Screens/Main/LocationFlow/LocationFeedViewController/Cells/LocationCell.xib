@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LocationCell" customModule="RickAndMortyFlexx" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="328" height="179"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="328" height="179"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME OF THE PLANET BUT REALLY LONG" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiI-gY-8Nk">
+                        <rect key="frame" x="0.0" y="8" width="328" height="41"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hee-YO-WHG">
+                        <rect key="frame" x="16" y="57" width="131" height="51"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Space Station" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHx-FF-lEm">
+                                <rect key="frame" x="0.0" y="0.0" width="131" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NHx-FF-lEm" firstAttribute="height" secondItem="hee-YO-WHG" secondAttribute="height" multiplier="0.999" id="6dG-5i-gI4"/>
+                            <constraint firstItem="NHx-FF-lEm" firstAttribute="width" secondItem="hee-YO-WHG" secondAttribute="width" id="9Nd-Cy-MsB"/>
+                            <constraint firstItem="NHx-FF-lEm" firstAttribute="centerY" secondItem="hee-YO-WHG" secondAttribute="centerY" id="EnA-pP-qnv"/>
+                            <constraint firstItem="NHx-FF-lEm" firstAttribute="centerX" secondItem="hee-YO-WHG" secondAttribute="centerX" id="kR1-kw-7Xo"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N7N-W5-QW1">
+                        <rect key="frame" x="181" y="116" width="131" height="51"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqb-MV-qv8">
+                                <rect key="frame" x="0.0" y="0.0" width="131" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cqb-MV-qv8" firstAttribute="height" secondItem="N7N-W5-QW1" secondAttribute="height" multiplier="0.999" id="9Q6-Jv-sYl"/>
+                            <constraint firstItem="cqb-MV-qv8" firstAttribute="width" secondItem="N7N-W5-QW1" secondAttribute="width" id="Lac-3k-9oC"/>
+                            <constraint firstItem="cqb-MV-qv8" firstAttribute="centerY" secondItem="N7N-W5-QW1" secondAttribute="centerY" id="haI-sg-QOX"/>
+                            <constraint firstItem="cqb-MV-qv8" firstAttribute="centerX" secondItem="N7N-W5-QW1" secondAttribute="centerX" id="wTj-7s-k0c"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="N7N-W5-QW1" firstAttribute="height" secondItem="hee-YO-WHG" secondAttribute="height" id="5CV-wz-YBn"/>
+                <constraint firstItem="WiI-gY-8Nk" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="6cL-ab-git"/>
+                <constraint firstItem="WiI-gY-8Nk" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Iip-gb-LiI"/>
+                <constraint firstAttribute="trailing" secondItem="N7N-W5-QW1" secondAttribute="trailing" constant="16" id="YIL-hY-htp"/>
+                <constraint firstAttribute="bottom" secondItem="N7N-W5-QW1" secondAttribute="bottom" constant="12" id="Zmw-K7-ICv"/>
+                <constraint firstItem="N7N-W5-QW1" firstAttribute="top" secondItem="hee-YO-WHG" secondAttribute="bottom" constant="8" id="aNL-1U-qcq"/>
+                <constraint firstItem="hee-YO-WHG" firstAttribute="top" secondItem="WiI-gY-8Nk" secondAttribute="bottom" constant="8" id="cXe-fD-ktP"/>
+                <constraint firstItem="N7N-W5-QW1" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.4" id="g6t-QX-hUC"/>
+                <constraint firstItem="hee-YO-WHG" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.4" id="p6d-qF-2vY"/>
+                <constraint firstItem="hee-YO-WHG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="rur-0I-WIe"/>
+                <constraint firstItem="WiI-gY-8Nk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="xFf-Pe-TGn"/>
+            </constraints>
+            <size key="customSize" width="328" height="179"/>
+            <point key="canvasLocation" x="255.07246376811597" y="127.56696428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

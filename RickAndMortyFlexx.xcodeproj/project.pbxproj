@@ -49,6 +49,11 @@
 		A56AA8892614BDA30070A8AF /* ChatacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AA8882614BDA30070A8AF /* ChatacterViewModel.swift */; };
 		A56AA88D2614BE1A0070A8AF /* CharacterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56AA88C2614BE1A0070A8AF /* CharacterCoordinator.swift */; };
 		A5A47CFD2629C23100E1E570 /* LocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A47CFC2629C23100E1E570 /* LocationCoordinator.swift */; };
+		A5A47D052629C49E00E1E570 /* LocationFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A47D042629C49E00E1E570 /* LocationFeedViewModel.swift */; };
+		A5A47D082629C5D600E1E570 /* LocationFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A47D072629C5D600E1E570 /* LocationFeedViewController.swift */; };
+		A5A47D0E2629C8B300E1E570 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A47D0C2629C8B300E1E570 /* LocationCell.swift */; };
+		A5A47D0F2629C8B300E1E570 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5A47D0D2629C8B300E1E570 /* LocationCell.xib */; };
+		A5A47D132629C8EB00E1E570 /* LocationCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A47D122629C8EB00E1E570 /* LocationCellModel.swift */; };
 		A5E5A4F4261B355E008CEAC9 /* Reachability+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E5A4F3261B355E008CEAC9 /* Reachability+Rx.swift */; };
 		A5E5A4F7261B6AD8008CEAC9 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E5A4F6261B6AD8008CEAC9 /* BaseCollectionViewCell.swift */; };
 		A5E5A4FA261B6B30008CEAC9 /* BaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E5A4F9261B6B30008CEAC9 /* BaseCellModel.swift */; };
@@ -124,6 +129,11 @@
 		A56AA8882614BDA30070A8AF /* ChatacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatacterViewModel.swift; sourceTree = "<group>"; };
 		A56AA88C2614BE1A0070A8AF /* CharacterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCoordinator.swift; sourceTree = "<group>"; };
 		A5A47CFC2629C23100E1E570 /* LocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinator.swift; sourceTree = "<group>"; };
+		A5A47D042629C49E00E1E570 /* LocationFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFeedViewModel.swift; sourceTree = "<group>"; };
+		A5A47D072629C5D600E1E570 /* LocationFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFeedViewController.swift; sourceTree = "<group>"; };
+		A5A47D0C2629C8B300E1E570 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		A5A47D0D2629C8B300E1E570 /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
+		A5A47D122629C8EB00E1E570 /* LocationCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellModel.swift; sourceTree = "<group>"; };
 		A5E5A4F3261B355E008CEAC9 /* Reachability+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reachability+Rx.swift"; sourceTree = "<group>"; };
 		A5E5A4F6261B6AD8008CEAC9 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		A5E5A4F9261B6B30008CEAC9 /* BaseCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellModel.swift; sourceTree = "<group>"; };
@@ -447,8 +457,21 @@
 		A5A47D002629C2F800E1E570 /* LocationFeedViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A5A47D072629C5D600E1E570 /* LocationFeedViewController.swift */,
+				A5A47D042629C49E00E1E570 /* LocationFeedViewModel.swift */,
+				A5A47D0B2629C87D00E1E570 /* Cells */,
 			);
 			path = LocationFeedViewController;
+			sourceTree = "<group>";
+		};
+		A5A47D0B2629C87D00E1E570 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A5A47D122629C8EB00E1E570 /* LocationCellModel.swift */,
+				A5A47D0C2629C8B300E1E570 /* LocationCell.swift */,
+				A5A47D0D2629C8B300E1E570 /* LocationCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		A5E5A4FC261B6C05008CEAC9 /* CharacterFeedViewController */ = {
@@ -617,6 +640,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A56AA75826013B9B0070A8AF /* LaunchScreen.storyboard in Resources */,
+				A5A47D0F2629C8B300E1E570 /* LocationCell.xib in Resources */,
 				A56AA75526013B9B0070A8AF /* Assets.xcassets in Resources */,
 				A5E5A5A426210E99008CEAC9 /* CharacterDetailCell.xib in Resources */,
 				A56AA75326013B9A0070A8AF /* Main.storyboard in Resources */,
@@ -680,6 +704,7 @@
 			files = (
 				A56AA76926013D1F0070A8AF /* MultiMoyaProvider.swift in Sources */,
 				A5E5A5B526233AA7008CEAC9 /* LoadingCellCollectionViewCell.swift in Sources */,
+				A5A47D082629C5D600E1E570 /* LocationFeedViewController.swift in Sources */,
 				A56AA86F26121EEB0070A8AF /* Storyboard.swift in Sources */,
 				A56AA88D2614BE1A0070A8AF /* CharacterCoordinator.swift in Sources */,
 				A5E5A506261B7C6F008CEAC9 /* CharacterCell.swift in Sources */,
@@ -704,12 +729,14 @@
 				A5E5A5C62627BBBA008CEAC9 /* EpisodeCharacterCellModel.swift in Sources */,
 				A56AA84E2612125C0070A8AF /* Coordinatable.swift in Sources */,
 				A56AA76F26013E970070A8AF /* Character.swift in Sources */,
+				A5A47D052629C49E00E1E570 /* LocationFeedViewModel.swift in Sources */,
 				A56AA8892614BDA30070A8AF /* ChatacterViewModel.swift in Sources */,
 				A56AA8352610C40E0070A8AF /* AppDependecies.swift in Sources */,
 				A5E5A5C12627B7DA008CEAC9 /* EpisodeCharacterCell.swift in Sources */,
 				A56AA863261214E90070A8AF /* PushTransition.swift in Sources */,
 				A56AA80E260F67B80070A8AF /* String+Extensions.swift in Sources */,
 				A56AA85F2612146F0070A8AF /* Transition.swift in Sources */,
+				A5A47D132629C8EB00E1E570 /* LocationCellModel.swift in Sources */,
 				A56AA811260F83F30070A8AF /* IDInitable.swift in Sources */,
 				A5E5A5892620CD8E008CEAC9 /* BaseTableViewCell.swift in Sources */,
 				A56AA78926023DA60070A8AF /* InfoModel.swift in Sources */,
@@ -724,6 +751,7 @@
 				A5E5A59A26210BFF008CEAC9 /* CharacterDetailCellModel.swift in Sources */,
 				A5E5A50C261B9514008CEAC9 /* CharacterCellModel.swift in Sources */,
 				A56AA85C261214540070A8AF /* Coordinator.swift in Sources */,
+				A5A47D0E2629C8B300E1E570 /* LocationCell.swift in Sources */,
 				A5E5A5B026233A29008CEAC9 /* LoadingCellModel.swift in Sources */,
 				A56AA776260141560070A8AF /* Location.swift in Sources */,
 				A5E5A52E261F80F9008CEAC9 /* UIColor+.swift in Sources */,

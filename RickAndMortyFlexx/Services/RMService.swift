@@ -196,5 +196,11 @@ final class RMService{
 			.map { $0.toArray() }
 			.asObservable()
 	}
+	
+	func filterLocations(query: String) -> Observable<[LocationModel]> {
+		return dbManager.filterObjects(ofType: LocationModel.self, query: query)
+			.map { $0.toArray() }
+			.asObservable()
+	}
 }
 
