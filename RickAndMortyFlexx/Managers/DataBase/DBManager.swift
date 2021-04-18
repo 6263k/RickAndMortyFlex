@@ -54,11 +54,11 @@ final class DBManager {
     characters.forEach { [weak self]  character in
       
       if let locationID = character.getLocationIDFromAPI() {
-        character.location = (self?.realm.object(ofType: LocationModel.self, forPrimaryKey: locationID))!
+        character.location = self?.realm.object(ofType: LocationModel.self, forPrimaryKey: locationID) ?? LocationModel()
       }
       
       if let originID = character.getOriginIDFromAPI() {
-        character.origin = (self?.realm.object(ofType: LocationModel.self, forPrimaryKey: originID))!
+        character.origin = self?.realm.object(ofType: LocationModel.self, forPrimaryKey: originID) ?? LocationModel()
       }
       
       if let episodesID = character.getEpisodesIDFromAPI() {
@@ -144,8 +144,13 @@ final class DBManager {
     return getObjectsWithIDs(ofType: objectType, IDs: [ID])
   }
   
-	func filterObjects<T: Object>(ofType type: T.Type, query: String) -> Observable<Results<T>> {
+	func filterObjectsByName<T: Object>(ofType type: T.Type, query: String) -> Observable<Results<T>> {
 		let objects = realm.objects(type).filter("name CONTAINS %d", query)
+		return Observable.collection(from: objects)
+	}
+	
+	func filterObjectsByPredicate<T: Object>(ofType type: T.Type, predicateFormat: String, args: Any...) -> Observable<Results<T>> {
+		let objects = realm.objects(type).filter(predicateFormat, args)
 		return Observable.collection(from: objects)
 	}
 }

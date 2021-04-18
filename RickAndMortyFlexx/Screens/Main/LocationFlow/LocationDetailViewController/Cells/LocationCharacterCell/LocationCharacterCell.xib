@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LocationCharacterCell" customModule="RickAndMortyFlexx" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="298" height="211"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="298" height="211"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rmTransparent" translatesAutoresizingMaskIntoConstraints="NO" id="hnD-1H-Yn7">
+                        <rect key="frame" x="226.5" y="4" width="63.5" height="63.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="hnD-1H-Yn7" secondAttribute="height" multiplier="1:1" id="NGR-fG-8kG"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrf-pH-7pr">
+                        <rect key="frame" x="0.0" y="4" width="298" height="63.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" systemColor="systemGreenColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AssetRMDrip" translatesAutoresizingMaskIntoConstraints="NO" id="cFX-HM-iXh">
+                        <rect key="frame" x="171" y="75.5" width="119" height="119"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="cFX-HM-iXh" secondAttribute="height" multiplier="1:1" id="Ese-6v-zo3"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2B-WL-RnX">
+                        <rect key="frame" x="12" y="75.5" width="151" height="49"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humanoid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwY-sZ-BuF">
+                                <rect key="frame" x="0.0" y="0.0" width="150.5" height="49"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GwY-sZ-BuF" firstAttribute="width" secondItem="p2B-WL-RnX" secondAttribute="width" multiplier="0.999" id="51q-MQ-dtU"/>
+                            <constraint firstItem="GwY-sZ-BuF" firstAttribute="centerY" secondItem="p2B-WL-RnX" secondAttribute="centerY" id="b8z-iH-oTc"/>
+                            <constraint firstItem="GwY-sZ-BuF" firstAttribute="height" secondItem="p2B-WL-RnX" secondAttribute="height" multiplier="0.999" id="fbZ-q1-RWr"/>
+                            <constraint firstItem="GwY-sZ-BuF" firstAttribute="centerX" secondItem="p2B-WL-RnX" secondAttribute="centerX" id="y6G-XA-XM1"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Female" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0a-ck-lnK">
+                        <rect key="frame" x="12" y="136.5" width="150.5" height="24.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="K0a-ck-lnK" firstAttribute="top" secondItem="GwY-sZ-BuF" secondAttribute="bottom" constant="12" id="07L-sd-e6T"/>
+                <constraint firstItem="wrf-pH-7pr" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="1td-2k-hCv"/>
+                <constraint firstItem="cFX-HM-iXh" firstAttribute="top" secondItem="wrf-pH-7pr" secondAttribute="bottom" constant="8" id="5ls-fr-Jlh"/>
+                <constraint firstAttribute="trailing" secondItem="cFX-HM-iXh" secondAttribute="trailing" constant="8" id="86A-bV-IZW"/>
+                <constraint firstItem="K0a-ck-lnK" firstAttribute="height" secondItem="GwY-sZ-BuF" secondAttribute="height" multiplier="0.5" id="969-Nc-gmf"/>
+                <constraint firstItem="hnD-1H-Yn7" firstAttribute="height" secondItem="wrf-pH-7pr" secondAttribute="height" id="C7g-KH-5Mu"/>
+                <constraint firstItem="cFX-HM-iXh" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.4" id="HmF-sN-RBW"/>
+                <constraint firstItem="K0a-ck-lnK" firstAttribute="leading" secondItem="GwY-sZ-BuF" secondAttribute="leading" id="JgT-L0-SF2"/>
+                <constraint firstItem="p2B-WL-RnX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="KO5-ze-vH6"/>
+                <constraint firstItem="cFX-HM-iXh" firstAttribute="leading" secondItem="p2B-WL-RnX" secondAttribute="trailing" constant="8" id="NlJ-CE-FCW"/>
+                <constraint firstItem="K0a-ck-lnK" firstAttribute="width" secondItem="GwY-sZ-BuF" secondAttribute="width" id="PZt-zz-5gl"/>
+                <constraint firstItem="hnD-1H-Yn7" firstAttribute="top" secondItem="wrf-pH-7pr" secondAttribute="top" id="YCI-6i-4aN"/>
+                <constraint firstItem="p2B-WL-RnX" firstAttribute="top" secondItem="cFX-HM-iXh" secondAttribute="top" id="aOA-ZK-M7w"/>
+                <constraint firstItem="wrf-pH-7pr" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="amN-QY-W1s"/>
+                <constraint firstItem="wrf-pH-7pr" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.3" id="dbb-hQ-3gR"/>
+                <constraint firstItem="hnD-1H-Yn7" firstAttribute="trailing" secondItem="wrf-pH-7pr" secondAttribute="trailing" constant="-8" id="haN-n7-Ysa"/>
+                <constraint firstItem="wrf-pH-7pr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="l58-jQ-Bkt"/>
+                <constraint firstItem="p2B-WL-RnX" firstAttribute="height" secondItem="cFX-HM-iXh" secondAttribute="height" multiplier="0.411067" id="v8x-aa-Bpo"/>
+            </constraints>
+            <size key="customSize" width="298" height="211"/>
+            <connections>
+                <outlet property="genderLabel" destination="K0a-ck-lnK" id="AGX-Wp-5dl"/>
+                <outlet property="nameLabel" destination="wrf-pH-7pr" id="Jzh-fb-IIc"/>
+                <outlet property="pictureView" destination="cFX-HM-iXh" id="VE0-4a-R6Z"/>
+                <outlet property="speciesLabel" destination="GwY-sZ-BuF" id="NYf-tm-iLp"/>
+                <outlet property="speciesOpacityView" destination="p2B-WL-RnX" id="g8E-gx-g4Z"/>
+            </connections>
+            <point key="canvasLocation" x="237.68115942028987" y="138.28125"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="AssetRMDrip" width="225.5" height="298.5"/>
+        <image name="rmTransparent" width="250" height="250"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

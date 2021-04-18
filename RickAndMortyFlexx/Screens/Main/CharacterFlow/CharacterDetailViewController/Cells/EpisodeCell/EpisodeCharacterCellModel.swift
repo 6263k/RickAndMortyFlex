@@ -11,17 +11,20 @@ import Foundation
 final class EpisodeCharacterCellModel: BaseCellModel {
 	private var episode: EpisodeModel!
 	
+	let id: Int
 	let episodeName: String
 	let episodeDate: String
 	let episodeNumber: String
+	var onCellTapped: VoidBlock?
 	
 	init(with episodeModel: EpisodeModel) {
 		
 		self.episode = episodeModel
 		
-		self.episodeDate = episodeModel.airDate
-		self.episodeName = episodeModel.name
-		self.episodeNumber = episodeModel.episode
+		id = episodeModel.id
+		episodeDate = episodeModel.airDate
+		episodeName = episodeModel.name
+		episodeNumber = episodeModel.episode
 		
 		
 		super.init(cellIdentifier: EpisodeCharacterCell.cellIdentifier)

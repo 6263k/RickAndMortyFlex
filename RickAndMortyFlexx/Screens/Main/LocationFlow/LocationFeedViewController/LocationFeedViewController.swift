@@ -20,7 +20,7 @@ class LocationFeedViewController: BaseViewController<LocationFeedViewModel> {
 	}
 	
 	@IBOutlet private weak var collectionView: UICollectionView!
-	
+	private let searchController = UISearchController(searchResultsController: nil)
 	private var dataSource: DataSource!
 	private let disposeBag = DisposeBag()
 	
@@ -31,6 +31,13 @@ class LocationFeedViewController: BaseViewController<LocationFeedViewModel> {
 	}
 	
 	override func setupStyle() {
+		searchController.obscuresBackgroundDuringPresentation = false
+		searchController.searchBar.placeholder = "Search location by name"
+		searchController.hidesNavigationBarDuringPresentation = true
+		definesPresentationContext = true
+		searchController.isActive = false
+		
+		self.navigationItem.searchController = searchController
 		self.navigationItem.setCustomTitle(text: "Locations")
 		collectionView.collectionViewLayout = generateCompositionalLayout()
 		
@@ -56,7 +63,7 @@ class LocationFeedViewController: BaseViewController<LocationFeedViewModel> {
 			guard let sectionKind = Section(rawValue: sectionIndex) else { return nil }
 			switch sectionKind {
 				case .locationFeed:
-					return self?.characterFeedLayout()
+					return self?.locationFeedLayout()
 				case .loadingCell:
 					return self?.loadingCellLayout()
 			}
@@ -64,14 +71,14 @@ class LocationFeedViewController: BaseViewController<LocationFeedViewModel> {
 		return layout
 	}
 	
-	private func characterFeedLayout() -> NSCollectionLayoutSection {
+	private func locationFeedLayout() -> NSCollectionLayoutSection {
 		let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
 																					heightDimension: .fractionalHeight(1.0))
 		let item = NSCollectionLayoutItem(layoutSize: itemSize)
-		item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+		item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
 		
-		let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2),
-																					 heightDimension: .fractionalHeight(1/5))
+		let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+																					 heightDimension: .fractionalHeight(1/4))
 		let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
 		
 		return NSCollectionLayoutSection(group: group)
@@ -108,6 +115,10 @@ class LocationFeedViewController: BaseViewController<LocationFeedViewModel> {
 			})
 			.disposed(by: disposeBag)
 		
+		searchController.searchBar.rx.text
+			.orEmpty
+			.bind(to: viewModel.searchText)
+			.disposed(by: disposeBag)
 		
 	}
 }

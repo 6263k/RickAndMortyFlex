@@ -19,7 +19,7 @@ class CharacterModel: Object, IDInitable, Decodable {
   @objc dynamic var image: String = ""
   @objc dynamic var url: String = ""
   @objc dynamic private var _status: String = CharacterStatus.none.rawValue
-  @objc dynamic var _gender: String = CharacterGender.none.rawValue
+  @objc dynamic private var _gender: String = CharacterGender.none.rawValue
   
   let episode = List<EpisodeModel>()
   

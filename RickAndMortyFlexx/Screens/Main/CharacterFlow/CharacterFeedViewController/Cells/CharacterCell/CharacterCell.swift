@@ -35,9 +35,7 @@ class CharacterCell: BaseCollectionViewCell {
 		characterImage.layer.shadowColor = UIColor.black.cgColor
 		characterImage.layer.shadowOpacity = 1
 		characterImage.layer.shadowOffset = .zero
-		characterImage.layer.shadowRadius = 10
-		characterImage.layer.cornerRadius = 16
-	
+		
 		opacityView.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
 		
 		let strokeColor: UIColor = .rmGreen
@@ -47,17 +45,15 @@ class CharacterCell: BaseCollectionViewCell {
 																																								 foregroundColor: foregroundColor,
 																																								 font: UIFont.boldSystemFont(ofSize: 19.0))
 		
-		let characterTapGesture = UITapGestureRecognizer(target: self, action: #selector(onCellTapped))
-		characterTapGesture.numberOfTapsRequired = 1
-		let imageTapGesture = UITapGestureRecognizer(target: self, action: #selector(onCellTapped))
-		imageTapGesture.numberOfTapsRequired = 1
+		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onCellTapped))
+		tapGesture.numberOfTapsRequired = 1
+
+		self.contentView.addGestureRecognizer(tapGesture)
 		
-		characterImage.isUserInteractionEnabled = true
-		characterImage.addGestureRecognizer(characterTapGesture)
-	
+		self.contentView.layer.cornerRadius = 16
+		self.contentView.layer.masksToBounds = true
 		
-		characterName.isUserInteractionEnabled = true
-		characterName.addGestureRecognizer(imageTapGesture)
+		setShadow()
 		
 		prepareForReuse()
 		super.prepareForReuse()

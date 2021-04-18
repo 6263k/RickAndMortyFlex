@@ -84,18 +84,22 @@ final class LocationFeedViewModel: BaseViewModel {
 		snapshot.appendSections([.locationFeed])
 		
 		
-		let charactersToShow = searching ? filteredLocations : allLocations
+		let locationsToShow = searching ? filteredLocations : allLocations
 		//Location Cell
-//		let locationCellModels: [CharacterCellModel] = charactersToShow
-//			.map { CharacterCellModel(with: $0) }
-//		
-//		characterCellModels.forEach { [weak self] location in
-//			location.onCellTapped = {
-//				let transition = PushTransition(isAnimated: true)
-//				self?.coordinator.route(to: .detailLocation(id: location.id), with: transition)
-//			}
-//		}
-//		snapshot.appendItems(characterCellModels, toSection: .locationFeed)
+		let locationCellModels: [LocationCellModel] = locationsToShow
+			.map { LocationCellModel(with: $0) }
+		
+		locationCellModels.forEach { [weak self] location in
+			guard let self = self else { return }
+			location.onCellTapped = {
+				let transition = PushTransition(isAnimated: true)
+				self.coordinator.route(to: .detailLocation(id: location.id),
+																from: self.coordinator.navigationController,
+																with: transition)
+			}
+		}
+		snapshot.appendItems(locationCellModels, toSection: .locationFeed)
+				
 		
 		//		Loading Cell
 		if isLoading.value {
@@ -112,7 +116,5 @@ final class LocationFeedViewModel: BaseViewModel {
 		currentPage += 1
 		requestData()
 	}
-	
-	
 	
 }

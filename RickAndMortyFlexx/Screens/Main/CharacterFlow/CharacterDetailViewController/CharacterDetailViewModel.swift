@@ -36,6 +36,7 @@ final class CharacterDetailViewModel: BaseViewModel {
 		isLoading.accept(true)
 		
 		service.requestCharacterWithHisData(by: id)
+			.catchAndReturn(.failure(.requestFailed))
 			.subscribe(onNext: {[weak self] result in
 				switch result {
 					case .success(let character):

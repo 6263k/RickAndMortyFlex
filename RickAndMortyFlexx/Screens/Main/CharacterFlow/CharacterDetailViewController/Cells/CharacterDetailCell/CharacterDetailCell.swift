@@ -33,6 +33,7 @@ class CharacterDetailCell: BaseCollectionViewCell {
 		var strokeColor = UIColor.rmDarkGreen
 		var foregroundColor = UIColor.rmPurple
 		opacityView.backgroundColor = UIColor(white: 1.0, alpha: 0.2)
+		
 		if let isLight = pictureView.image?.averageColor?.isLight(),
 			 !isLight {
 			strokeColor = .rmCyan
@@ -51,6 +52,10 @@ class CharacterDetailCell: BaseCollectionViewCell {
 		originLabel.text = characterDetailModel.characterOrigin.name
 		locationLabel.text = characterDetailModel.characterLocation.name
 		
+		self.contentView.backgroundColor = .rmPaleGreen
+		self.contentView.layer.cornerRadius = 30
+		self.contentView.layer.masksToBounds = true
+		setShadow(shadowOFFset: CGSize(width: 0.0, height: 5.0), shadowRadius: 3, shadowOpacity: 0.5)
 	}
 	
 }

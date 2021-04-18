@@ -16,7 +16,7 @@ final class LocationCoordinator: Coordinatable {
 	
 	let navigationController: UINavigationController = {
 		let navigationController = UINavigationController()
-		navigationController.tabBarItem.image = #imageLiteral(resourceName: "characterFeedIcon")
+		navigationController.tabBarItem.image = #imageLiteral(resourceName: "locationFeedIcon")
 		navigationController.navigationBar.isTranslucent = false
 		navigationController.navigationBar.barTintColor = .rmDarkBlue
 		
@@ -35,31 +35,32 @@ final class LocationCoordinator: Coordinatable {
 		
 	}
 	func start() {
-		route(to: .locationFeed, with: SetTransition(isAnimated: false))
+		route(to: .locationFeed, from: navigationController, with: SetTransition(isAnimated: false))
 	}
 	
 	
-	func route(to route: Route, with transition: Transition) {
+	func route(to route: Route, from: UIViewController, with transition: Transition) {
 		switch route {
 			case .locationFeed:
-				routeToLocationFeed(from: navigationController, with: transition)
+				routeToLocationFeed(from: from, with: transition)
 			case .detailLocation(let id):
-				routeToDetailLocation(from: navigationController, to: id, with: transition)
+				routeToDetailLocation(from: from, to: id, with: transition)
 		}
 	}
 	
 	private func routeToLocationFeed(from vc: UIViewController, with transition: Transition) {
-//		let characterFeedViewModel = CharacterFeedViewModel(service: dependecies.rmService, coordinator: self)
-//		characterFeedViewModel.coordinator = self
-//		guard let characterViewController = CharacterFeedViewController.createWithStoryboard(Storyboard.main, with: characterFeedViewModel) else { return }
-//		transition.open(characterViewController, from: vc, completion: nil)
+		let locationFeedViewModel = LocationFeedViewModel(service: dependecies.rmService, coordinator: self)
+		locationFeedViewModel.coordinator = self
+		guard let locationFeedViewController = LocationFeedViewController.createWithStoryboard(Storyboard.main, with: locationFeedViewModel) else { return }
+		
+		transition.open(locationFeedViewController, from: vc, completion: nil)
 	}
 	
 	private func routeToDetailLocation(from vc: UIViewController, to characterID: Int, with transition: Transition) {
-//		let characterDetailViewModel = CharacterDetailViewModel(service: dependecies.rmService, id: characterID, coordinator: self)
-//		characterDetailViewModel.coordinator = self
-//		guard let detailCharacterVC = CharacterDetailViewController.createWithStoryboard(Storyboard.main, with: characterDetailViewModel) else { return }
-//		transition.open(detailCharacterVC, from: vc, completion: nil)
+		let locationDetailViewModel = LocationDetailViewModel(service: dependecies.rmService, id: characterID, coordinator: self)
+		locationDetailViewModel.coordinator = self
+		guard let detailLocationrVC = LocationDetailViewController.createWithStoryboard(Storyboard.main, with: locationDetailViewModel) else { return }
+		transition.open(detailLocationrVC, from: vc, completion: nil)
 	}
 	
 	

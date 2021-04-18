@@ -31,6 +31,9 @@ extension UIColor {
 		return nil
 	}
 	
+	static var rmRandomColors: [UIColor] {
+		[.rmBrown, .rmLightYellow, .rmLeafGrean]
+	}
 	static let rmPurple = UIColor(hex: "#36003aFF")!
 	static let rmGreen = UIColor(hex: "#8BCF21FF")!
 	static let rmDarkGreen = UIColor(hex: "#2F9331FF")!
@@ -44,6 +47,7 @@ extension UIColor {
 	static let rmLightPurple = UIColor(hex: "#C5A1FFFF")!
 	static let rmLightRed = UIColor(hex: "#FF7373FF")!
 	static let rmLeafGrean = UIColor(hex: "#177972FF")!
+	static let rmPaleGreen = UIColor(hex: "#EFF1E4FF")!
 }
 
 

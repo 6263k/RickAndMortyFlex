@@ -34,7 +34,16 @@ final class BaseTabBarCoordinator: Coordinator {
 		
 		let characterCoordinator = CharacterCoordinator(dependecies: dependecies)
 		characterCoordinator.start()
-		tabBarController.setViewControllers([characterCoordinator.navigationController], animated: false)
+		
+		let locationCoordinator = LocationCoordinator(dependecies: dependecies)
+		locationCoordinator.start()
+		
+		let episodeCoordinator = EpisodeCoordnatior(dependecies: dependecies)
+		episodeCoordinator.start()
+		
+		tabBarController.setViewControllers([characterCoordinator.navigationController,
+																				 locationCoordinator.navigationController,
+																				 episodeCoordinator.navigationController], animated: false)
     
 		parentNavigationController.pushViewController(tabBarController, animated: false)
   }
