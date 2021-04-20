@@ -85,20 +85,18 @@ final class EpisodeFeedViewModel: BaseViewModel {
 		
 		let episodeToShow = searching ? filteredEpisodes : allEpisodes
 		//Location Cell
-		let episodeCellModels: [EpisodeCharacterCellModel] = episodeToShow
-			.map { EpisodeCharacterCellModel(with: $0) }
 		
-		episodeCellModels.forEach { [weak self] episode in
-			guard let self = self else { return }
-			episode.onCellTapped = {
+		for episode in episodeToShow {
+			let episodeCellModel = EpisodeCharacterCellModel(with: episode)
+			
+			episodeCellModel.onCellTapped = {
 				let transition = PushTransition(isAnimated: true)
 				self.coordinator.route(to: .detailEpisode(id: episode.id),
 															 from: self.coordinator.navigationController,
 															 with: transition)
 			}
+			snapshot.appendItems([episodeCellModel], toSection: .episodeFeed)
 		}
-		snapshot.appendItems(episodeCellModels, toSection: .episodeFeed)
-		
 		
 		//		Loading Cell
 		if isLoading.value {

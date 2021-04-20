@@ -56,10 +56,26 @@ final class CharacterDetailViewModel: BaseViewModel {
 		snapshot.appendSections([.characterDetail, .episodes])
 		
 		let characterDetailCellModel = CharacterDetailCellModel(with: character)
+		characterDetailCellModel.originButtonTapped = { [weak self] in
+			let transition = PushTransition(isAnimated: true)
+			self?.coordinator.route(to: .routeToLocation(id: characterDetailCellModel.characterOrigin.id), with: transition)
+		}
+		characterDetailCellModel.locationButtonTapped = { [weak self] in
+			let transition = PushTransition(isAnimated: true)
+			self?.coordinator.route(to: .routeToLocation(id: characterDetailCellModel.characterLocation.id), with: transition)
+		}
+		
 		snapshot.appendItems([characterDetailCellModel], toSection: .characterDetail)
 		
 		let episodeCellModels = character.episode.toArray()
 			.map {EpisodeCharacterCellModel(with: $0)}
+		
+		for episodeModel in episodeCellModels {
+			episodeModel.onCellTapped = { [weak self] in
+				let transition = PushTransition(isAnimated: true)
+				self?.coordinator.route(to: .routeToEpisode(id: episodeModel.id), with: transition)
+			}
+		}
 		
 		snapshot.appendItems(episodeCellModels, toSection: .episodes)
 		self.snapshot.accept(snapshot)

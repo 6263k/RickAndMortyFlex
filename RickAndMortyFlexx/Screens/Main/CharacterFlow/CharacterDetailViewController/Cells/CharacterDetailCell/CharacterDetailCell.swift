@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class CharacterDetailCell: BaseCollectionViewCell {
-
+	private weak var cellModel: CharacterDetailCellModel!
 	
 	@IBOutlet private weak var pictureView: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
@@ -24,6 +24,7 @@ class CharacterDetailCell: BaseCollectionViewCell {
 	override func configure(with cellModel: BaseCellModel) {
 		super.configure(with: cellModel)
 		guard let characterDetailModel = cellModel as? CharacterDetailCellModel else { fatalError() }
+		self.cellModel = characterDetailModel
 		
 		let imageURL = URL(string: characterDetailModel.characterImage)
 		pictureView.kf.indicatorType = .activity
@@ -56,6 +57,14 @@ class CharacterDetailCell: BaseCollectionViewCell {
 		self.contentView.layer.cornerRadius = 30
 		self.contentView.layer.masksToBounds = true
 		setShadow(shadowOFFset: CGSize(width: 0.0, height: 5.0), shadowRadius: 3, shadowOpacity: 0.5)
+	}
+	
+	@IBAction func originButtonTapped(_ sender: Any) {
+		cellModel?.originButtonTapped?()
+	}
+	
+	@IBAction func locationButtonTapped(_ sender: Any) {
+		cellModel?.locationButtonTapped?()
 	}
 	
 }

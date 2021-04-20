@@ -11,10 +11,12 @@ final class CharacterCoordinator: Coordinatable {
   enum Route {
     case characterFeed
 		case detailCharacter(id: Int)
+		case routeToEpisode(id: Int)
+		case routeToLocation(id: Int)
   }
   private let dependecies: AppDependecies
   
-  let navigationController: UINavigationController = {
+  var navigationController: UINavigationController = {
     let navigationController = UINavigationController()
 		navigationController.tabBarItem.image = #imageLiteral(resourceName: "characterFeedIcon")
 		navigationController.navigationBar.isTranslucent = false
@@ -45,12 +47,18 @@ final class CharacterCoordinator: Coordinatable {
   }
   
   
-	func route(to route: Route, with transition: Transition) {
+	func route(to route: Route, from: UIViewController? = nil, with transition: Transition) {
+		let fromVC = from ?? navigationController
     switch route {
 			case .characterFeed:
-				routeToCharacterViewController(from: navigationController, with: transition)
+				routeToCharacterViewController(from: fromVC, with: transition)
 			case .detailCharacter(let id):
-				routeToCharacterDetailViewController(from: navigationController, to: id, with: transition)
+				routeToCharacterDetailViewController(from: fromVC, to: id, with: transition)
+			case .routeToEpisode(let id):
+				routeToEpisode(from: fromVC, to: id, with: transition)
+			case .routeToLocation(let id):
+				routeToLocation(from: fromVC, to: id, with: transition)
+			
     }
   }
   
@@ -69,6 +77,21 @@ final class CharacterCoordinator: Coordinatable {
 	}
 	
   
+	private func routeToEpisode(from vc: UIViewController, to episodeID: Int, with transition: Transition) {
+		let episodeChoordinator = EpisodeCoordnatior(dependecies: dependecies)
+		episodeChoordinator.setNavigationController(nc: navigationController)
+		episodeChoordinator.route(to: .detailEpisode(id: episodeID), from: vc, with: transition)
+	}
+	
+	private func routeToLocation(from vc: UIViewController, to locationID: Int, with transition: Transition) {
+		let locationCoordinator = LocationCoordinator(dependecies: dependecies)
+		locationCoordinator.setNavigationController(nc: navigationController)
+		locationCoordinator.route(to: .detailLocation(id: locationID), with: transition)
+	}
+	
+	func setNavigationController(nc: UINavigationController) {
+		navigationController = nc
+	}
 }
 
 extension CharacterCoordinator {

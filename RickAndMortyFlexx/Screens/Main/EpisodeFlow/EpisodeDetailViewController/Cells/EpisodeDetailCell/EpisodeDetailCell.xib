@@ -47,13 +47,13 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rit-GX-KwB">
-                        <rect key="frame" x="12" y="147" width="36.5" height="18"/>
+                        <rect key="frame" x="12" y="133" width="36.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2013, March 24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vn6-fZ-MWf">
-                        <rect key="frame" x="52.5" y="147" width="238.5" height="18"/>
+                        <rect key="frame" x="52.5" y="133" width="238.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                 <constraint firstItem="NaB-0M-dHR" firstAttribute="height" secondItem="5VJ-6q-zPk" secondAttribute="height" id="CBO-pa-Aya"/>
                 <constraint firstItem="3A7-Du-Chf" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="DCz-Uz-3H6"/>
                 <constraint firstItem="3A7-Du-Chf" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.3" id="GEi-6h-1kR"/>
-                <constraint firstAttribute="bottom" secondItem="rit-GX-KwB" secondAttribute="bottom" constant="16" id="PNM-ug-Zab"/>
+                <constraint firstAttribute="bottom" secondItem="rit-GX-KwB" secondAttribute="bottom" constant="30" id="PNM-ug-Zab"/>
                 <constraint firstItem="5VJ-6q-zPk" firstAttribute="top" secondItem="3A7-Du-Chf" secondAttribute="bottom" constant="20" id="Wg6-j4-g5I"/>
                 <constraint firstItem="NaB-0M-dHR" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.2" id="XNE-4F-vmC"/>
                 <constraint firstItem="NaB-0M-dHR" firstAttribute="centerY" secondItem="5VJ-6q-zPk" secondAttribute="centerY" id="YAr-Le-6BZ"/>

@@ -60,6 +60,13 @@ final class LocationDetailViewModel: BaseViewModel {
 		let characterCellModels = location.characters.toArray()
 			.map {LocationCharacterCellModel(with: $0)}
 
+		for characterCellModel in characterCellModels {
+			characterCellModel.onCellTapped = { [weak self] in
+				let transition = PushTransition(isAnimated: true)
+				self?.coordinator.route(to: .characterWith(id: characterCellModel.id), with: transition)
+			}
+		}
+		
 		snapshot.appendItems(characterCellModels, toSection: .charactersInLocation)
 		
 		self.snapshot.accept(snapshot)

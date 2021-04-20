@@ -87,15 +87,17 @@ final class CharacterFeedViewModel: BaseViewModel {
 		
 		let charactersToShow = searching ? filteredChracters : allCharacters
 		//Character Cell
-		let characterCellModels: [CharacterCellModel] = charactersToShow
-			.map { CharacterCellModel(with: $0) }
-		characterCellModels.forEach { [weak self] character in
-			character.onCellTapped = {
+		
+		for character in charactersToShow {
+			let characterCellModel = CharacterCellModel(with: character)
+			
+			characterCellModel.onCellTapped = { [weak self] in
 				let transition = PushTransition(isAnimated: true)
 				self?.coordinator.route(to: .detailCharacter(id: character.id), with: transition)
 			}
+			snapshot.appendItems([characterCellModel], toSection: .characterFeed)
 		}
-		snapshot.appendItems(characterCellModels, toSection: .characterFeed)
+			
 		
 //		Loading Cell
 		if isLoading.value {

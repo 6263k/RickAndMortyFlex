@@ -28,8 +28,14 @@ class EpisodeDetailCell: BaseCollectionViewCell {
 		nameLabel.text = episodeDetailCellModel.episodeName
 		
 		codeLabel.text = episodeDetailCellModel.episodeCode
+		codeOpacityView.backgroundColor = .orange
+		codeOpacityView.layer.cornerRadius = 25
 		
 		dateLabel.text = episodeDetailCellModel.episodeDate
 		
+		
+		contentView.backgroundColor = .rmLeafGrean
+		contentView.layer.cornerRadius = 40
+		setShadow()
 	}
 }

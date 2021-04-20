@@ -126,16 +126,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="39G-z1-mSc">
-                                <rect key="frame" x="0.0" y="210" width="288" height="30"/>
+                                <rect key="frame" x="0.0" y="210" width="256" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRq-eD-wz7">
-                                        <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRq-eD-wz7">
+                                        <rect key="frame" x="0.0" y="0.0" width="68.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IM JUST A DEAD BOY I GOT " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtW-PP-kjb">
-                                        <rect key="frame" x="72" y="0.0" width="216" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Earth Dimension (C-137)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtW-PP-kjb">
+                                        <rect key="frame" x="71.5" y="0.0" width="184.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -145,21 +145,47 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32K-qD-5Wx">
+                        <rect key="frame" x="278" y="518" width="40" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="Ppw-cr-XGQ"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="AssetRightArrow"/>
+                        <connections>
+                            <action selector="originButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="t6J-9D-aT5"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VM2-98-uh7">
+                        <rect key="frame" x="276" y="560" width="40" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="EHS-mq-oPQ"/>
+                        </constraints>
+                        <state key="normal" image="AssetRightArrow"/>
+                        <connections>
+                            <action selector="locationButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Zej-wn-cCU"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="32K-qD-5Wx" secondAttribute="trailing" constant="2" id="2cn-YL-wjW"/>
                     <constraint firstItem="UyH-QS-sa6" firstAttribute="height" secondItem="UvF-y1-C11" secondAttribute="height" multiplier="0.25" id="2vV-G7-ndx"/>
                     <constraint firstItem="AUo-jO-3DS" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.4" id="3f6-B0-slG"/>
                     <constraint firstItem="UvF-y1-C11" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="BAW-Oz-ZkW"/>
                     <constraint firstItem="UyH-QS-sa6" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="BlK-yJ-seM"/>
                     <constraint firstItem="UyH-QS-sa6" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="MEc-mC-y0N"/>
+                    <constraint firstItem="VM2-98-uh7" firstAttribute="centerY" secondItem="TtW-PP-kjb" secondAttribute="centerY" id="RwU-UV-Bq4"/>
                     <constraint firstItem="AUo-jO-3DS" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="SKa-Kk-qw0"/>
+                    <constraint firstAttribute="trailing" secondItem="VM2-98-uh7" secondAttribute="trailing" constant="4" id="Sse-HA-BPd"/>
                     <constraint firstAttribute="bottom" secondItem="AUo-jO-3DS" secondAttribute="bottom" id="XGk-94-yJc"/>
                     <constraint firstItem="UyH-QS-sa6" firstAttribute="bottom" secondItem="UvF-y1-C11" secondAttribute="bottom" id="XYn-Qa-eQf"/>
                     <constraint firstItem="UvF-y1-C11" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.6" id="XwN-iX-DTP"/>
                     <constraint firstItem="AUo-jO-3DS" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.9" id="YiM-Id-ci8"/>
+                    <constraint firstItem="32K-qD-5Wx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="X6g-As-uYm" secondAttribute="trailing" constant="4" id="guA-AG-fhW"/>
                     <constraint firstItem="UvF-y1-C11" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="vkt-rM-S9u"/>
                     <constraint firstItem="UvF-y1-C11" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="waZ-pz-UEU"/>
+                    <constraint firstItem="VM2-98-uh7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TtW-PP-kjb" secondAttribute="trailing" constant="4" id="y0x-zh-5te"/>
+                    <constraint firstItem="32K-qD-5Wx" firstAttribute="centerY" secondItem="X6g-As-uYm" secondAttribute="centerY" id="zEA-ob-npC"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -175,10 +201,11 @@
                 <outlet property="statusLabel" destination="fr9-bn-KDM" id="Nq6-3M-N5e"/>
                 <outlet property="typeLabel" destination="80k-Po-Aez" id="Sx7-wT-JDu"/>
             </connections>
-            <point key="canvasLocation" x="-1.4492753623188408" y="265.84821428571428"/>
+            <point key="canvasLocation" x="4" y="260"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="AssetRightArrow" width="50" height="50"/>
         <image name="testImage" width="423" height="423"/>
     </resources>
 </document>

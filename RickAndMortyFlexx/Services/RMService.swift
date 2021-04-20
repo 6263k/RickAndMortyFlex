@@ -20,10 +20,11 @@ final class RMService{
     self.dbManager = dbManager
   }
   
+
+	
+
 	//MARK: -ToFix
 	// Couldnt figure out how to combine this  alsmot the same functions into one using generics, since if you look into the body of function in some places i use array of models type and in some places just model itself, so the problem probably is in dbManager
-	
-	
 	func getCharacters(by IDs: [Int]) -> Observable<Result<[CharacterModel], APIError>> {
     return Observable.create { [weak self] observable in
 			let apiRequestObservable = self?.apiManager.request(CharacterTarget.charactersWith(ids: IDs)).asObservable()

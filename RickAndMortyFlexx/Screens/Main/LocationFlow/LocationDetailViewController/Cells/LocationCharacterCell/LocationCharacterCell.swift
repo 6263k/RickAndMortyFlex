@@ -9,7 +9,8 @@ import UIKit
 import Kingfisher
 
 class LocationCharacterCell: BaseCollectionViewCell {
-
+	private weak var cellModel: LocationCharacterCellModel!
+	
 	@IBOutlet private weak var nameLabel: UILabel!
 	@IBOutlet private weak var pictureView: UIImageView!
 	@IBOutlet private weak var genderLabel: UILabel!
@@ -38,11 +39,10 @@ class LocationCharacterCell: BaseCollectionViewCell {
 	override func configure(with cellModel: BaseCellModel) {
 		super.configure(with: cellModel)
 		guard let locationCharacterCellModel = cellModel as? LocationCharacterCellModel else { return }
+		self.cellModel = locationCharacterCellModel
 		
 		nameLabel.text = locationCharacterCellModel.characterName
 		
-		
-	
 		genderLabel.text = locationCharacterCellModel.characterGender
 		
 		speciesLabel.text = locationCharacterCellModel.characterSpecies
@@ -57,9 +57,16 @@ class LocationCharacterCell: BaseCollectionViewCell {
 		self.contentView.layer.masksToBounds = true
 	
 		self.contentView.backgroundColor = .rmBrown
-		
 		setShadow()
 		layoutSubviews()
+		
+		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onCelltapped))
+		self.contentView.addGestureRecognizer(tapGesture)
+		
 		super.prepareForReuse()
+	}
+	
+	@objc private func onCelltapped() {
+		cellModel?.onCellTapped?()
 	}
 }

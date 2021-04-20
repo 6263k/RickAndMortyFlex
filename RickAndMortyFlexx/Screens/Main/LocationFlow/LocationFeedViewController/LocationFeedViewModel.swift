@@ -86,19 +86,21 @@ final class LocationFeedViewModel: BaseViewModel {
 		
 		let locationsToShow = searching ? filteredLocations : allLocations
 		//Location Cell
-		let locationCellModels: [LocationCellModel] = locationsToShow
-			.map { LocationCellModel(with: $0) }
 		
-		locationCellModels.forEach { [weak self] location in
-			guard let self = self else { return }
-			location.onCellTapped = {
+		
+		
+		for location in locationsToShow {
+			let locationCellModel = LocationCellModel(with: location)
+			
+			locationCellModel.onCellTapped = {
 				let transition = PushTransition(isAnimated: true)
 				self.coordinator.route(to: .detailLocation(id: location.id),
-																from: self.coordinator.navigationController,
-																with: transition)
+															 from: self.coordinator.navigationController,
+															 with: transition)
 			}
+			snapshot.appendItems([locationCellModel], toSection: .locationFeed)
 		}
-		snapshot.appendItems(locationCellModels, toSection: .locationFeed)
+		
 				
 		
 		//		Loading Cell

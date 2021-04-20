@@ -19,6 +19,9 @@ class CharacterDetailCellModel: BaseCellModel {
 	let characterLocation: LocationModel
 	let characterOrigin: LocationModel
 	
+	var originButtonTapped: VoidBlock?
+	var locationButtonTapped: VoidBlock?
+	
 	init(with character: CharacterModel) {
 		self.characterId = character.id
 		self.characterName = character.name
